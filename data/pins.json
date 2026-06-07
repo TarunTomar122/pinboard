@@ -1,20 +1,5 @@
 [
   {
-    "id": "colab-cli-1780849770",
-    "title": "Google Colab CLI",
-    "description": "Bridge local terminal to remote Colab GPUs. colab --gpu A100, exec scripts remotely.",
-    "url": "https://developers.googleblog.com/introducing-the-google-colab-cli/",
-    "tags": [
-      "tools",
-      "ai",
-      "gpu"
-    ],
-    "notes": "Relevant for MSc dissertation. Fine-tune Gemma 3-1B with 5 commands.",
-    "x": 172,
-    "y": 219,
-    "createdAt": "2026-06-07T16:00:00.000Z"
-  },
-  {
     "id": "vcc-1780849770",
     "title": "Visual Context Compression",
     "description": "Dissertation direction: compressing visual context for VLA inference efficiency.",
@@ -25,8 +10,8 @@
       "explore"
     ],
     "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
-    "x": 450,
-    "y": 450,
+    "x": 272,
+    "y": 222,
     "createdAt": "2026-06-07T16:00:00.000Z"
   }
 ]
