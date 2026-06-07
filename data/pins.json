@@ -1,21 +1,5 @@
 [
   {
-    "id": "1",
-    "title": "Next.js Documentation",
-    "description": "The React framework for production - building full-stack web applications.",
-    "url": "https://nextjs.org/docs",
-    "category": "Development",
-    "column": "pinned",
-    "createdAt": "2026-01-15T10:00:00Z",
-    "x": 100,
-    "y": 100,
-    "tags": [
-      "framework",
-      "react",
-      "reference"
-    ]
-  },
-  {
     "id": "3",
     "title": "React Server Components",
     "description": "Exploring the new RSC paradigm for server-rendered React apps.",
