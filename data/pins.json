@@ -87,19 +87,5 @@
     "x": 450,
     "y": 450,
     "createdAt": "2026-06-07T16:00:00.000Z"
-  },
-  {
-    "id": "ponti-1780849770",
-    "title": "Edoardo Ponti",
-    "description": "Target professor at Edinburgh. Research: efficient NLP, model compression, VLA.",
-    "url": "https://homepages.inf.ed.ac.uk/eponti/",
-    "tags": [
-      "professor",
-      "edinburgh"
-    ],
-    "notes": "Potential dissertation supervisor. Look into his recent papers.",
-    "x": 750,
-    "y": 300,
-    "createdAt": "2026-06-07T16:00:00.000Z"
   }
 ]
