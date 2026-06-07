@@ -16,22 +16,6 @@
     ]
   },
   {
-    "id": "2",
-    "title": "Tailwind CSS",
-    "description": "A utility-first CSS framework for rapidly building custom designs.",
-    "url": "https://tailwindcss.com",
-    "category": "Design",
-    "column": "pinned",
-    "createdAt": "2026-01-16T10:00:00Z",
-    "x": 400,
-    "y": 150,
-    "tags": [
-      "css",
-      "design",
-      "reference"
-    ]
-  },
-  {
     "id": "3",
     "title": "React Server Components",
     "description": "Exploring the new RSC paradigm for server-rendered React apps.",
