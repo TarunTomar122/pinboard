@@ -1,20 +1,5 @@
 [
   {
-    "id": "3",
-    "title": "React Server Components",
-    "description": "Exploring the new RSC paradigm for server-rendered React apps.",
-    "url": "https://react.dev/reference/rsc/server-components",
-    "category": "Development",
-    "column": "exploring",
-    "createdAt": "2026-02-01T10:00:00Z",
-    "x": 700,
-    "y": 200,
-    "tags": [
-      "react",
-      "explore"
-    ]
-  },
-  {
     "id": "4",
     "title": "GitHub API Docs",
     "description": "REST API documentation for GitHub - repos, issues, and more.",
