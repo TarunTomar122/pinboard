@@ -30,21 +30,6 @@
     ]
   },
   {
-    "id": "6",
-    "title": "TypeScript Handbook",
-    "description": "Complete guide to TypeScript for JavaScript developers.",
-    "url": "https://www.typescriptlang.org/docs/handbook/",
-    "category": "Development",
-    "column": "done",
-    "createdAt": "2026-01-01T10:00:00Z",
-    "x": 800,
-    "y": 400,
-    "tags": [
-      "typescript",
-      "reference"
-    ]
-  },
-  {
     "id": "colab-cli-1780849770",
     "title": "Google Colab CLI",
     "description": "Bridge local terminal to remote Colab GPUs. colab --gpu A100, exec scripts remotely.",
