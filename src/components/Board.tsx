@@ -1,22 +1,29 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Pin, ColumnId, COLUMNS } from "@/types";
-import { getPins, savePins } from "@/lib/store";
-import { seedPins, CATEGORIES } from "@/lib/seed";
+import { Pin, ColumnId, COLUMNS, ALL_CATEGORIES, Category, CATEGORY_COLORS } from "@/types";
+import { getPins, savePins, hasToken, setToken } from "@/lib/store";
+import { seedPins } from "@/lib/seed";
 import Column from "./Column";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
 import PinModal from "./PinModal";
+import TokenSetup from "./TokenSetup";
 
 export default function Board() {
   const [pins, setPins] = useState<Pin[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [modalPin, setModalPin] = useState<Pin | null | undefined>(undefined);
   const [saving, setSaving] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [tokenReady, setTokenReady] = useState(false);
+
+  useEffect(() => {
+    setTokenReady(hasToken());
+  }, []);
 
   const loadPins = useCallback(async () => {
     setLoading(true);
@@ -24,55 +31,39 @@ export default function Board() {
     try {
       let data = await getPins();
       if (!data || data.length === 0) {
-        // First load — seed the data
         data = seedPins;
         await savePins(data);
       }
       setPins(data);
     } catch {
-      setError("Failed to load pins. Showing cached data.");
+      setError("Failed to load pins");
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    loadPins();
-  }, [loadPins]);
+    if (tokenReady) {
+      loadPins();
+    }
+  }, [tokenReady, loadPins]);
 
   const persistPins = async (newPins: Pin[]) => {
     setPins(newPins);
     setSaving(true);
     const ok = await savePins(newPins);
     setSaving(false);
-    if (!ok) setError("Failed to save. Changes may be lost.");
+    if (!ok) setError("Failed to save — changes may be lost");
     else setError(null);
-  };
-
-  const handleAddPin = () => {
-    setModalPin(null);
-  };
-
-  const handleEditPin = (pin: Pin) => {
-    setModalPin(pin);
-  };
-
-  const handleDeletePin = async (id: string) => {
-    const newPins = pins.filter((p) => p.id !== id);
-    await persistPins(newPins);
   };
 
   const handleSavePin = async (pinData: Omit<Pin, "id" | "createdAt"> & { id?: string }) => {
     let newPins: Pin[];
     if (pinData.id) {
-      // Edit existing
       newPins = pins.map((p) =>
-        p.id === pinData.id
-          ? { ...p, ...pinData, id: pinData.id }
-          : p
+        p.id === pinData.id ? { ...p, ...pinData, id: pinData.id } : p
       );
     } else {
-      // Add new
       const newPin: Pin = {
         ...pinData,
         id: Date.now().toString(),
@@ -84,110 +75,149 @@ export default function Board() {
     setModalPin(undefined);
   };
 
-  const handleDragStart = (e: React.DragEvent, pinId: string) => {
-    e.dataTransfer.setData("pinId", pinId);
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
+  const handleDeletePin = async (id: string) => {
+    await persistPins(pins.filter((p) => p.id !== id));
   };
 
   const handleDrop = async (columnId: ColumnId) => {
     const pinId = (window as unknown as { __draggedPinId?: string }).__draggedPinId;
     if (!pinId) return;
-    const newPins = pins.map((p) =>
-      p.id === pinId ? { ...p, column: columnId } : p
-    );
-    await persistPins(newPins);
+    await persistPins(pins.map((p) => p.id === pinId ? { ...p, column: columnId } : p));
   };
 
-  // Override drag start to also store in window
   const handleDragStartWithStore = (e: React.DragEvent, pinId: string) => {
     e.dataTransfer.setData("pinId", pinId);
     (window as unknown as { __draggedPinId: string }).__draggedPinId = pinId;
   };
 
   const filteredPins = pins.filter((pin) => {
-    const matchesSearch =
-      !searchQuery ||
-      pin.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      pin.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.toLowerCase();
+    const matchesSearch = !q ||
+      pin.title.toLowerCase().includes(q) ||
+      pin.description.toLowerCase().includes(q) ||
+      pin.notes?.toLowerCase().includes(q);
     const matchesCategory = !selectedCategory || pin.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const categories = [...new Set(pins.map((p) => p.category))];
+  const categories = ALL_CATEGORIES;
+
+  // Token setup screen
+  if (!tokenReady) {
+    return <TokenSetup onComplete={(token) => { setToken(token); setTokenReady(true); }} />;
+  }
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="flex items-center gap-3 text-gray-500">
-          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-          </svg>
-          <span>Loading pins...</span>
+      <div className="flex items-center justify-center h-screen">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-2 border-gray-200 border-t-[#007AFF] rounded-full animate-spin" />
+          <span className="text-sm text-[#86868b]">Loading pins...</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-screen">
       {/* Header */}
-      <div className="flex flex-col gap-4 p-4 border-b border-gray-200 dark:border-gray-700">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">📌 Pinboard</h1>
-          <div className="flex items-center gap-3">
+      <header className="border-b border-[#e5e5e7] px-4 sm:px-6 py-4 bg-white/80 backdrop-blur-sm sticky top-0 z-30">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h1 className="text-xl font-semibold tracking-tight">📌 Pinboard</h1>
+            <p className="text-xs text-[#86868b] mt-0.5">by tarat & margo</p>
+          </div>
+          <div className="flex items-center gap-2">
             {saving && (
-              <span className="text-xs text-gray-400 flex items-center gap-1">
-                <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
+              <span className="text-xs text-[#86868b] flex items-center gap-1.5">
+                <div className="w-3 h-3 border border-gray-300 border-t-[#007AFF] rounded-full animate-spin" />
                 Saving...
               </span>
             )}
             <button
-              onClick={handleAddPin}
-              className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+              onClick={() => setShowSettings(!showSettings)}
+              className="p-2 rounded-lg text-[#86868b] hover:bg-[#f5f5f7] transition-colors"
+              title="Settings"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setModalPin(null)}
+              className="bg-[#007AFF] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0066D6] transition-colors active:scale-[0.97]"
             >
               + Add Pin
             </button>
           </div>
         </div>
+
+        {/* Settings panel */}
+        {showSettings && (
+          <div className="mb-3 p-3 bg-[#f5f5f7] rounded-lg animate-fade-in">
+            <p className="text-xs text-[#86868b] mb-2">GitHub Token (for saving changes)</p>
+            <div className="flex gap-2">
+              <input
+                type="password"
+                placeholder="ghp_xxxxx..."
+                defaultValue=""
+                className="flex-1 px-3 py-1.5 text-xs border border-[#e5e5e7] rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-[#007AFF]"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    const val = (e.target as HTMLInputElement).value.trim();
+                    if (val) { setToken(val); setTokenReady(true); setShowSettings(false); }
+                  }
+                }}
+              />
+              <button
+                onClick={() => {
+                  const input = document.querySelector<HTMLInputElement>('input[type="password"]');
+                  const val = input?.value.trim();
+                  if (val) { setToken(val); setTokenReady(true); setShowSettings(false); }
+                }}
+                className="px-3 py-1.5 text-xs bg-[#007AFF] text-white rounded-md hover:bg-[#0066D6]"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Filters */}
         <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
           <SearchBar onSearch={setSearchQuery} />
           <CategoryFilter
-            categories={categories.length > 0 ? categories : CATEGORIES}
+            categories={categories}
             selected={selectedCategory}
             onSelect={setSelectedCategory}
           />
         </div>
+
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-lg text-sm dark:bg-red-900/20 dark:border-red-800 dark:text-red-400">
+          <div className="mt-3 bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-lg text-sm">
             {error}
           </div>
         )}
-      </div>
+      </header>
 
       {/* Columns */}
-      <div className="flex-1 overflow-x-auto p-4">
-        <div className="flex gap-4 min-h-[calc(100vh-200px)]">
+      <main className="flex-1 overflow-x-auto p-4 sm:p-6">
+        <div className="flex gap-4 min-h-[calc(100vh-240px)]">
           {COLUMNS.map((col) => (
             <Column
               key={col.id}
               column={col}
               pins={filteredPins.filter((p) => p.column === col.id)}
-              onEdit={handleEditPin}
+              onEdit={(pin) => setModalPin(pin)}
               onDelete={handleDeletePin}
               onDragStart={handleDragStartWithStore}
               onDrop={handleDrop}
-              onDragOver={handleDragOver}
+              onDragOver={(e) => e.preventDefault()}
             />
           ))}
         </div>
-      </div>
+      </main>
 
       {/* Modal */}
       {modalPin !== undefined && (

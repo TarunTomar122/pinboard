@@ -24,17 +24,19 @@ export default function Column({
 }: ColumnProps) {
   return (
     <div
-      className={`flex flex-col rounded-xl border-2 ${column.color} min-w-[280px] max-w-[320px] flex-1`}
+      className={`flex flex-col rounded-2xl min-w-[260px] max-w-[320px] flex-1 ${column.color} border border-[#e5e5e7]`}
       onDragOver={onDragOver}
       onDrop={() => onDrop(column.id)}
     >
-      <div className="px-4 py-3 flex items-center justify-between">
-        <h2 className="font-bold text-gray-800">{column.title}</h2>
-        <span className="text-sm text-gray-500 bg-white/60 px-2 py-0.5 rounded-full">
-          {pins.length}
-        </span>
+      <div className={`px-4 pt-4 pb-2 border-t-[3px] rounded-t-2xl ${column.borderColor}`}>
+        <div className="flex items-center justify-between">
+          <h2 className="font-semibold text-sm text-gray-800">{column.title}</h2>
+          <span className="text-xs text-[#86868b] bg-white/80 px-2 py-0.5 rounded-full font-medium">
+            {pins.length}
+          </span>
+        </div>
       </div>
-      <div className="flex-1 px-3 pb-3 space-y-2 overflow-y-auto max-h-[calc(100vh-220px)]">
+      <div className="flex-1 px-3 pb-3 space-y-2 overflow-y-auto max-h-[calc(100vh-280px)]">
         {pins.map((pin) => (
           <PinCard
             key={pin.id}
@@ -45,7 +47,7 @@ export default function Column({
           />
         ))}
         {pins.length === 0 && (
-          <div className="text-center py-8 text-gray-400 text-sm">
+          <div className="text-center py-10 text-[#86868b] text-xs">
             Drop pins here
           </div>
         )}

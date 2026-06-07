@@ -1,41 +1,46 @@
 "use client";
 
+import { Category, CATEGORY_COLORS, ALL_CATEGORIES } from "@/types";
+
 interface CategoryFilterProps {
-  categories: string[];
-  selected: string | null;
-  onSelect: (category: string | null) => void;
+  categories: Category[];
+  selected: Category | null;
+  onSelect: (category: Category | null) => void;
 }
 
 export default function CategoryFilter({
-  categories,
   selected,
   onSelect,
 }: CategoryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5">
       <button
         onClick={() => onSelect(null)}
-        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+        className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
           selected === null
-            ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
-            : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+            ? "bg-gray-900 text-white"
+            : "bg-[#f5f5f7] text-[#86868b] hover:bg-[#e5e5e7]"
         }`}
       >
         All
       </button>
-      {categories.map((cat) => (
-        <button
-          key={cat}
-          onClick={() => onSelect(cat)}
-          className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-            selected === cat
-              ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
-          }`}
-        >
-          {cat}
-        </button>
-      ))}
+      {ALL_CATEGORIES.map((cat) => {
+        const colors = CATEGORY_COLORS[cat];
+        const isActive = selected === cat;
+        return (
+          <button
+            key={cat}
+            onClick={() => onSelect(isActive ? null : cat)}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+              isActive
+                ? `${colors.bg} ${colors.text} ring-1 ring-current/20`
+                : "bg-[#f5f5f7] text-[#86868b] hover:bg-[#e5e5e7]"
+            }`}
+          >
+            {colors.label}
+          </button>
+        );
+      })}
     </div>
   );
 }
