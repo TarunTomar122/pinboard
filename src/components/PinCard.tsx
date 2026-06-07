@@ -1,6 +1,6 @@
 "use client";
 
-import { Pin, CATEGORY_COLORS } from "@/types";
+import { Pin, Category, CATEGORY_COLORS } from "@/types";
 
 interface PinCardProps {
   pin: Pin;
@@ -10,28 +10,20 @@ interface PinCardProps {
 }
 
 export default function PinCard({ pin, onEdit, onDelete, onDragStart }: PinCardProps) {
-  const colors = CATEGORY_COLORS[pin.category] || CATEGORY_COLORS.random;
+  const colors = CATEGORY_COLORS[pin.category as Category] || CATEGORY_COLORS.random;
 
   return (
     <div
       draggable
       onDragStart={(e) => onDragStart(e, pin.id)}
+      onClick={() => onEdit(pin)}
       className="group bg-white rounded-xl border border-[#e5e5e7] p-3.5 shadow-sm hover:shadow-md transition-all cursor-grab active:cursor-grabbing active:scale-[0.98]"
     >
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-medium text-sm text-gray-900 leading-snug">{pin.title}</h3>
         <div className="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
           <button
-            onClick={() => onEdit(pin)}
-            className="p-1 rounded-md text-[#86868b] hover:text-[#007AFF] hover:bg-[#f5f5f7]"
-            title="Edit"
-          >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-            </svg>
-          </button>
-          <button
-            onClick={() => onDelete(pin.id)}
+            onClick={(e) => { e.stopPropagation(); onDelete(pin.id); }}
             className="p-1 rounded-md text-[#86868b] hover:text-red-500 hover:bg-red-50"
             title="Delete"
           >

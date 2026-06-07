@@ -1,32 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 interface TokenSetupProps {
   onComplete: (token: string) => void;
 }
 
 export default function TokenSetup({ onComplete }: TokenSetupProps) {
-  const [token, setToken] = useState("");
   const [error, setError] = useState("");
+  const [validating, setValidating] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmed = token.trim();
-    if (!trimmed) return;
+  const handleSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const val = inputRef.current?.value?.trim() || "";
+    if (!val) {
+      setError("Please paste your token");
+      return;
+    }
 
-    // Validate token by trying to access the repo
+    setValidating(true);
+    setError("");
     try {
       const res = await fetch("https://api.github.com/user", {
-        headers: { Authorization: `Bearer ${trimmed}` },
+        headers: { Authorization: `Bearer ${val}` },
       });
       if (res.ok) {
-        onComplete(trimmed);
+        onComplete(val);
       } else {
         setError("Invalid token — check and try again");
+        setValidating(false);
       }
     } catch {
       setError("Network error — try again");
+      setValidating(false);
     }
   };
 
@@ -53,16 +60,18 @@ export default function TokenSetup({ onComplete }: TokenSetupProps) {
                 className="text-[#007AFF] hover:underline"
               >
                 github.com/settings/tokens
-              </a>
-              {" "}with <code className="bg-[#f5f5f7] px-1 rounded text-[11px]">repo</code> scope.
+              </a>{" "}
+              with <code className="bg-[#f5f5f7] px-1 rounded text-[11px]">repo</code> scope.
             </p>
             <input
-              type="password"
-              value={token}
-              onChange={(e) => { setToken(e.target.value); setError(""); }}
-              placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-              className="w-full px-4 py-3 border border-[#e5e5e7] rounded-xl text-sm bg-[#f5f5f7] focus:outline-none focus:ring-2 focus:ring-[#007AFF] focus:border-transparent transition-shadow"
+              ref={inputRef}
+              type="text"
+              name="token"
+              placeholder="ghp_xx...xxxx"
+              autoComplete="off"
+              spellCheck={false}
               autoFocus
+              className="w-full px-4 py-3 border border-[#e5e5e7] rounded-xl text-sm bg-[#f5f5f7] focus:outline-none focus:ring-2 focus:ring-[#007AFF] focus:border-transparent transition-shadow"
             />
             {error && (
               <p className="mt-2 text-xs text-red-500">{error}</p>
@@ -70,10 +79,10 @@ export default function TokenSetup({ onComplete }: TokenSetupProps) {
           </div>
           <button
             type="submit"
-            disabled={!token.trim()}
+            disabled={validating}
             className="w-full bg-[#007AFF] text-white py-3 rounded-xl text-sm font-medium hover:bg-[#0066D6] transition-all active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Connect
+            {validating ? "Checking..." : "Connect"}
           </button>
         </form>
 

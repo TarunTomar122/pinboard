@@ -1,4 +1,4 @@
-export type ColumnId = "pinned" | "exploring" | "doing" | "done";
+export type ColumnId = "pinned" | "exploring" | "doing" | "done" | "discarded";
 
 export type Category = "tools" | "ideas" | "articles" | "projects" | "people" | "random";
 
@@ -25,6 +25,7 @@ export const COLUMNS: Column[] = [
   { id: "exploring", title: "🔍 Exploring", color: "bg-yellow-50", borderColor: "border-t-yellow-400" },
   { id: "doing", title: "⚡ Doing", color: "bg-blue-50", borderColor: "border-t-blue-400" },
   { id: "done", title: "✅ Done", color: "bg-green-50", borderColor: "border-t-green-400" },
+  { id: "discarded", title: "🗑 Discarded", color: "bg-gray-100", borderColor: "border-t-gray-400" },
 ];
 
 export const CATEGORY_COLORS: Record<Category, { bg: string; text: string; label: string }> = {

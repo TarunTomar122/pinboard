@@ -2,42 +2,17 @@
 
 import { Pin } from "@/types";
 
-const REPO_OWNER = "TarunTomar122";
-const REPO_NAME = "pinboard";
-const FILE_PATH = "data/pins.json";
-const BRANCH = "main";
-
-const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
-const RAW_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${FILE_PATH}`;
-
 let cachedPins: Pin[] | null = null;
-
-function getToken(): string | null {
-  if (typeof window === "undefined") return null;
-  return localStorage.getItem("pinboard_token");
-}
-
-export function setToken(token: string) {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("pinboard_token", token);
-  }
-}
-
-export function hasToken(): boolean {
-  return !!getToken();
-}
+let cachedSha: string | null = null;
 
 export async function getPins(): Promise<Pin[]> {
   try {
-    const res = await fetch(RAW_URL, { cache: "no-store" });
+    const res = await fetch("/api/pins", { cache: "no-store" });
     if (res.ok) {
       const data = await res.json();
+      cachedSha = res.headers.get("x-sha");
       cachedPins = data;
       return data;
-    }
-    if (res.status === 404) {
-      cachedPins = [];
-      return [];
     }
     throw new Error(`HTTP ${res.status}`);
   } catch {
@@ -46,65 +21,33 @@ export async function getPins(): Promise<Pin[]> {
   }
 }
 
-async function getFileSha(): Promise<string | null> {
-  const token = getToken();
-  if (!token) return null;
+export async function savePins(pins: Pin[]): Promise<boolean> {
   try {
-    const res = await fetch(`${API_URL}?ref=${BRANCH}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
+    const res = await fetch("/api/pins", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pins, sha: cachedSha }),
     });
     if (res.ok) {
       const data = await res.json();
-      return data.sha;
+      cachedSha = data.sha;
+      cachedPins = pins;
+      return true;
     }
-    return null;
-  } catch {
-    return null;
-  }
-}
-
-export async function savePins(pins: Pin[]): Promise<boolean> {
-  const token = getToken();
-  if (!token) {
-    console.error("No GitHub token set — go to Settings to add one");
     return false;
-  }
-
-  try {
-    const sha = await getFileSha();
-    const body: Record<string, unknown> = {
-      message: sha ? `Update pins` : `Create pins.json`,
-      content: Buffer.from(JSON.stringify(pins, null, 2)).toString("base64"),
-    };
-    if (sha) body.sha = sha;
-
-    const res = await fetch(API_URL, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      console.error("Save failed:", err);
-      return false;
-    }
-
-    cachedPins = pins;
-    return true;
-  } catch (e) {
-    console.error("Save error:", e);
+  } catch {
     return false;
   }
 }
 
 export function getCachedPins(): Pin[] | null {
   return cachedPins;
+}
+
+export function hasToken(): boolean {
+  return true;
+}
+
+export function setToken(_token: string) {
+  // No-op — token is server-side env var
 }
