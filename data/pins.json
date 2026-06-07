@@ -75,21 +75,6 @@
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
-    "id": "wayve-1780849770",
-    "title": "Wayve",
-    "description": "Embodied AI for autonomous driving. Target company #1.",
-    "url": "https://wayve.ai",
-    "tags": [
-      "career",
-      "robotics",
-      "explore"
-    ],
-    "notes": "Goal: work here after MSc. Focus on end-to-end learned driving.",
-    "x": 600,
-    "y": 100,
-    "createdAt": "2026-06-07T16:00:00.000Z"
-  },
-  {
     "id": "edinburgh-1780849770",
     "title": "Edinburgh MSc AI",
     "description": "MSc Artificial Intelligence at University of Edinburgh. Sep 2026 start.",
