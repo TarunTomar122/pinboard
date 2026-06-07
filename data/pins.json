@@ -1,20 +1,5 @@
 [
   {
-    "id": "4",
-    "title": "GitHub API Docs",
-    "description": "REST API documentation for GitHub - repos, issues, and more.",
-    "url": "https://docs.github.com/en/rest",
-    "category": "Development",
-    "column": "exploring",
-    "createdAt": "2026-02-10T10:00:00Z",
-    "x": 200,
-    "y": 400,
-    "tags": [
-      "api",
-      "reference"
-    ]
-  },
-  {
     "id": "5",
     "title": "Pinboard App",
     "description": "Building a kanban-style pinboard with drag and drop support.",
@@ -42,20 +27,6 @@
     "notes": "Relevant for MSc dissertation. Fine-tune Gemma 3-1B with 5 commands.",
     "x": 350,
     "y": 250,
-    "createdAt": "2026-06-07T16:00:00.000Z"
-  },
-  {
-    "id": "edinburgh-1780849770",
-    "title": "Edinburgh MSc AI",
-    "description": "MSc Artificial Intelligence at University of Edinburgh. Sep 2026 start.",
-    "url": "https://www.ed.ac.uk/informatics/postgraduate/taught/msc-artificial-intelligence",
-    "tags": [
-      "education",
-      "career"
-    ],
-    "notes": "$72K loan. Focus: Bayesian ML, research depth.",
-    "x": 150,
-    "y": 500,
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
