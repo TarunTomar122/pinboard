@@ -1,65 +1,148 @@
 "use client";
 
-import { Pin, Category, CATEGORY_COLORS } from "@/types";
+import { Pin } from "@/types";
+import { getTagColor } from "@/lib/tags";
 
 interface PinCardProps {
   pin: Pin;
-  onEdit: (pin: Pin) => void;
-  onDelete: (id: string) => void;
-  onDragStart: (e: React.DragEvent, pinId: string) => void;
+  dimmed: boolean;
+  onMouseDown: (e: React.MouseEvent, pinId: string) => void;
+  onTouchStart: (e: React.TouchEvent, pinId: string) => void;
+  onClick: (pin: Pin) => void;
+  onDelete: (pinId: string) => void;
 }
 
-export default function PinCard({ pin, onEdit, onDelete, onDragStart }: PinCardProps) {
-  const colors = CATEGORY_COLORS[pin.category as Category] || CATEGORY_COLORS.random;
+export default function PinCard({
+  pin,
+  dimmed,
+  onMouseDown,
+  onTouchStart,
+  onClick,
+  onDelete,
+}: PinCardProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClick(pin);
+  };
+
+  const handleDelete = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDelete(pin.id);
+  };
 
   return (
     <div
-      draggable
-      onDragStart={(e) => onDragStart(e, pin.id)}
-      onClick={() => onEdit(pin)}
-      className="group bg-white rounded-xl border border-[#e5e5e7] p-3.5 shadow-sm hover:shadow-md transition-all cursor-grab active:cursor-grabbing active:scale-[0.98]"
+      className="pin-card"
+      style={{
+        position: "absolute",
+        left: pin.x,
+        top: pin.y,
+        width: 240,
+        opacity: dimmed ? 0.2 : 1,
+        transition: "opacity 0.2s ease, box-shadow 0.2s ease",
+        zIndex: dimmed ? 0 : 1,
+      }}
+      onMouseDown={(e) => onMouseDown(e, pin.id)}
+      onTouchStart={(e) => onTouchStart(e, pin.id)}
+      onClick={handleClick}
     >
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="font-medium text-sm text-gray-900 leading-snug">{pin.title}</h3>
-        <div className="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
-          <button
-            onClick={(e) => { e.stopPropagation(); onDelete(pin.id); }}
-            className="p-1 rounded-md text-[#86868b] hover:text-red-500 hover:bg-red-50"
-            title="Delete"
+      <div
+        className="pin-card-inner group"
+        style={{
+          background: "#fff",
+          borderRadius: 12,
+          border: "1px solid #e5e5e7",
+          padding: "16px",
+          cursor: "grab",
+          userSelect: "none",
+          transition: "box-shadow 0.2s ease",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            "0 4px 12px rgba(0,0,0,0.08)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            "0 1px 2px rgba(0,0,0,0.04)";
+        }}
+      >
+        {/* Delete button */}
+        <button
+          onClick={handleDelete}
+          className="opacity-0 group-hover:opacity-100 absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-[#e5e5e7] text-[#86868b] text-xs flex items-center justify-center hover:bg-red-50 hover:text-red-500 hover:border-red-200 transition-all cursor-pointer"
+          style={{ position: "absolute" }}
+        >
+          ×
+        </button>
+
+        {/* Title */}
+        <h3
+          style={{
+            fontWeight: 600,
+            fontSize: 14,
+            color: "#1d1d1f",
+            marginBottom: 4,
+            lineHeight: 1.3,
+          }}
+        >
+          {pin.title}
+        </h3>
+
+        {/* Description */}
+        {pin.description && (
+          <p
+            className="line-clamp-2"
+            style={{
+              fontSize: 12,
+              color: "#86868b",
+              lineHeight: 1.4,
+              marginBottom: 8,
+            }}
           >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
+            {pin.description}
+          </p>
+        )}
 
-      {pin.description && (
-        <p className="mt-1.5 text-xs text-[#86868b] line-clamp-2 leading-relaxed">
-          {pin.description}
-        </p>
-      )}
-
-      {pin.notes && (
-        <p className="mt-1.5 text-xs text-[#86868b]/70 line-clamp-2 italic leading-relaxed">
-          💭 {pin.notes}
-        </p>
-      )}
-
-      <div className="mt-2.5 flex items-center justify-between">
-        <span className={`inline-flex items-center px-2 py-0.5 text-[11px] font-medium rounded-full ${colors.bg} ${colors.text}`}>
-          {colors.label}
-        </span>
+        {/* URL indicator */}
         {pin.url && (
-          <a
-            href={pin.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[#007AFF] hover:underline flex items-center gap-0.5"
-            onClick={(e) => e.stopPropagation()}
+          <div
+            style={{
+              fontSize: 11,
+              color: "#007AFF",
+              marginBottom: 8,
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
           >
-            Open ↗
-          </a>
+            🔗 {pin.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]}
+          </div>
+        )}
+
+        {/* Tags */}
+        {pin.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {pin.tags.map((tag) => {
+              const color = getTagColor(tag);
+              const isExplore = tag.toLowerCase() === "explore";
+              return (
+                <span
+                  key={tag}
+                  className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full"
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 500,
+                    backgroundColor: color.bg,
+                    color: color.text,
+                  }}
+                >
+                  {isExplore && <span>🔍</span>}
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
         )}
       </div>
     </div>

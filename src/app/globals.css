@@ -11,6 +11,15 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -21,41 +30,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d1d1d6;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a6;
-}
-
-/* Modal backdrop blur */
-.backdrop-blur-modal {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Drag ghost */
-[draggable="true"] {
-  -webkit-user-drag: element;
-}
-
 /* Line clamp */
 .line-clamp-2 {
   display: -webkit-box;
@@ -64,14 +38,7 @@ html {
   overflow: hidden;
 }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Fade in animation */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
@@ -82,10 +49,27 @@ html {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-slide-up {
   animation: slideUp 0.25s ease-out;
+}
+
+/* Card hover effect */
+.pin-card .pin-card-inner {
+  transition: box-shadow 0.2s ease;
+}
+
+/* Selection prevention during drag */
+.pin-card {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Scrollbar hide for modal */
+.pin-modal-backdrop {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

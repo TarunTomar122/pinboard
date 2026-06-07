@@ -1,9 +1,9 @@
-import Board from "@/components/Board";
+import Canvas from "@/components/Canvas";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Board />
+    <main style={{ width: "100vw", height: "100vh" }}>
+      <Canvas />
     </main>
   );
 }
