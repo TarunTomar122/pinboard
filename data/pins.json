@@ -6,7 +6,14 @@
     "url": "https://nextjs.org/docs",
     "category": "Development",
     "column": "pinned",
-    "createdAt": "2026-01-15T10:00:00Z"
+    "createdAt": "2026-01-15T10:00:00Z",
+    "x": 100,
+    "y": 100,
+    "tags": [
+      "framework",
+      "react",
+      "reference"
+    ]
   },
   {
     "id": "2",
@@ -15,7 +22,14 @@
     "url": "https://tailwindcss.com",
     "category": "Design",
     "column": "pinned",
-    "createdAt": "2026-01-16T10:00:00Z"
+    "createdAt": "2026-01-16T10:00:00Z",
+    "x": 400,
+    "y": 150,
+    "tags": [
+      "css",
+      "design",
+      "reference"
+    ]
   },
   {
     "id": "3",
@@ -24,7 +38,13 @@
     "url": "https://react.dev/reference/rsc/server-components",
     "category": "Development",
     "column": "exploring",
-    "createdAt": "2026-02-01T10:00:00Z"
+    "createdAt": "2026-02-01T10:00:00Z",
+    "x": 700,
+    "y": 200,
+    "tags": [
+      "react",
+      "explore"
+    ]
   },
   {
     "id": "4",
@@ -33,7 +53,13 @@
     "url": "https://docs.github.com/en/rest",
     "category": "Development",
     "column": "exploring",
-    "createdAt": "2026-02-10T10:00:00Z"
+    "createdAt": "2026-02-10T10:00:00Z",
+    "x": 200,
+    "y": 400,
+    "tags": [
+      "api",
+      "reference"
+    ]
   },
   {
     "id": "5",
@@ -42,7 +68,13 @@
     "url": "https://github.com/TarunTomar122/pinboard",
     "category": "Project",
     "column": "doing",
-    "createdAt": "2026-03-01T10:00:00Z"
+    "createdAt": "2026-03-01T10:00:00Z",
+    "x": 500,
+    "y": 350,
+    "tags": [
+      "project",
+      "build"
+    ]
   },
   {
     "id": "6",
@@ -51,6 +83,85 @@
     "url": "https://www.typescriptlang.org/docs/handbook/",
     "category": "Development",
     "column": "done",
-    "createdAt": "2026-01-01T10:00:00Z"
+    "createdAt": "2026-01-01T10:00:00Z",
+    "x": 800,
+    "y": 400,
+    "tags": [
+      "typescript",
+      "reference"
+    ]
+  },
+  {
+    "id": "colab-cli-1780849770",
+    "title": "Google Colab CLI",
+    "description": "Bridge local terminal to remote Colab GPUs. colab --gpu A100, exec scripts remotely.",
+    "url": "https://developers.googleblog.com/introducing-the-google-colab-cli/",
+    "tags": [
+      "tools",
+      "ai",
+      "gpu"
+    ],
+    "notes": "Relevant for MSc dissertation. Fine-tune Gemma 3-1B with 5 commands.",
+    "x": 350,
+    "y": 250,
+    "createdAt": "2026-06-07T16:00:00.000Z"
+  },
+  {
+    "id": "wayve-1780849770",
+    "title": "Wayve",
+    "description": "Embodied AI for autonomous driving. Target company #1.",
+    "url": "https://wayve.ai",
+    "tags": [
+      "career",
+      "robotics",
+      "explore"
+    ],
+    "notes": "Goal: work here after MSc. Focus on end-to-end learned driving.",
+    "x": 600,
+    "y": 100,
+    "createdAt": "2026-06-07T16:00:00.000Z"
+  },
+  {
+    "id": "edinburgh-1780849770",
+    "title": "Edinburgh MSc AI",
+    "description": "MSc Artificial Intelligence at University of Edinburgh. Sep 2026 start.",
+    "url": "https://www.ed.ac.uk/informatics/postgraduate/taught/msc-artificial-intelligence",
+    "tags": [
+      "education",
+      "career"
+    ],
+    "notes": "$72K loan. Focus: Bayesian ML, research depth.",
+    "x": 150,
+    "y": 500,
+    "createdAt": "2026-06-07T16:00:00.000Z"
+  },
+  {
+    "id": "vcc-1780849770",
+    "title": "Visual Context Compression",
+    "description": "Dissertation direction: compressing visual context for VLA inference efficiency.",
+    "url": "",
+    "tags": [
+      "research",
+      "dissertation",
+      "explore"
+    ],
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
+    "x": 450,
+    "y": 450,
+    "createdAt": "2026-06-07T16:00:00.000Z"
+  },
+  {
+    "id": "ponti-1780849770",
+    "title": "Edoardo Ponti",
+    "description": "Target professor at Edinburgh. Research: efficient NLP, model compression, VLA.",
+    "url": "https://homepages.inf.ed.ac.uk/eponti/",
+    "tags": [
+      "professor",
+      "edinburgh"
+    ],
+    "notes": "Potential dissertation supervisor. Look into his recent papers.",
+    "x": 750,
+    "y": 300,
+    "createdAt": "2026-06-07T16:00:00.000Z"
   }
 ]
