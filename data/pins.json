@@ -1,20 +1,5 @@
 [
   {
-    "id": "5",
-    "title": "Pinboard App",
-    "description": "Building a kanban-style pinboard with drag and drop support.",
-    "url": "https://github.com/TarunTomar122/pinboard",
-    "category": "Project",
-    "column": "doing",
-    "createdAt": "2026-03-01T10:00:00Z",
-    "x": 500,
-    "y": 350,
-    "tags": [
-      "project",
-      "build"
-    ]
-  },
-  {
     "id": "colab-cli-1780849770",
     "title": "Google Colab CLI",
     "description": "Bridge local terminal to remote Colab GPUs. colab --gpu A100, exec scripts remotely.",
