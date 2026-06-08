@@ -13,5 +13,53 @@
     "x": 272,
     "y": 222,
     "createdAt": "2026-06-07T16:00:00.000Z"
+  },
+  {
+    "id": "affordancevla-1780883809",
+    "title": "AffordanceVLA: VLA Model with Affordance-Aware Understanding",
+    "description": "New VLA model that bridges VLM semantic spaces and embodied control policies using affordance-aware understanding for robotic manipulation.",
+    "url": "https://arxiv.org/abs/2606.06155",
+    "tags": [
+      "research",
+      "VLA",
+      "embodied-ai",
+      "robotics"
+    ],
+    "notes": "Directly relevant to dissertation direction. Addresses the structural mismatch between VLM semantic spaces and control policies - core problem for VLA inference.",
+    "x": 150,
+    "y": 400,
+    "createdAt": "2026-06-08T08:00:00.000Z"
+  },
+  {
+    "id": "kitscenes-1780883809",
+    "title": "KITScenes: European Autonomous Driving Multimodal Dataset",
+    "description": "High-fidelity European AD dataset with synchronized LiDAR, cameras, and HD maps. Fills gaps in geographic diversity and sensor fidelity.",
+    "url": "https://arxiv.org/abs/2606.02956",
+    "tags": [
+      "career",
+      "autonomous-driving",
+      "dataset",
+      "explore"
+    ],
+    "notes": "Wayve-relevant. European dataset with better sensor fidelity than nuScenes. Worth exploring for understanding current AD benchmarks.",
+    "x": 500,
+    "y": 250,
+    "createdAt": "2026-06-08T08:01:00.000Z"
+  },
+  {
+    "id": "adacodec-1780883809",
+    "title": "AdaCodec: Predictive Visual Code for Video MLLMs",
+    "description": "Compresses visual tokens in video MLLMs by exploiting temporal redundancy. Reduces repeated encoding of shared objects/backgrounds across frames.",
+    "url": "https://arxiv.org/abs/2606.02569",
+    "tags": [
+      "research",
+      "visual-compression",
+      "efficiency",
+      "explore"
+    ],
+    "notes": "Visual context compression for video models. Adjacent to dissertation interest in compressing visual context for VLA inference.",
+    "x": 750,
+    "y": 500,
+    "createdAt": "2026-06-08T08:02:00.000Z"
   }
 ]
