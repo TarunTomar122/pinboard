@@ -10,8 +10,8 @@
       "explore"
     ],
     "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
-    "x": 272,
-    "y": 222,
+    "x": 141,
+    "y": 214,
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
@@ -25,8 +25,8 @@
       "gpu"
     ],
     "notes": "Fine-tune models with 5 commands from terminal.",
-    "x": 464,
-    "y": 123,
+    "x": 356,
+    "y": 66,
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
