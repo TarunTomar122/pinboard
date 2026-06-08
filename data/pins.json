@@ -58,20 +58,6 @@
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
-    "id": "ghapi-1780884148",
-    "title": "GitHub API Docs",
-    "description": "REST API for GitHub.",
-    "url": "https://docs.github.com/rest",
-    "tags": [
-      "api",
-      "reference"
-    ],
-    "notes": "",
-    "x": 200,
-    "y": 400,
-    "createdAt": "2026-06-07T10:00:00Z"
-  },
-  {
     "id": "ts-1780884148",
     "title": "TypeScript Handbook",
     "description": "Official TypeScript docs.",
