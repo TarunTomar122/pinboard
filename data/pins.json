@@ -83,10 +83,11 @@
     "title": "gemma stuff",
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
     "description": "",
-    "notes": "i wanna know what this is about and what can i do with it?",
+    "notes": "i wanna know what this is about and what can i do with it?\n\n\n--- RESEARCH (Jun 8 2026) ---\nGemma 4 QAT (released ~Jun 5, 2026): Google released official quantization-aware training checkpoints for all 5 Gemma 4 sizes (E2B, E4B, 12B, 26B-A4B MoE, 31B).\n\nKey: 4-bit QAT models use ~72% less memory with near-original performance. Far better than post-training quantization.\n\nWhat you can do:\n- Run 12B on a laptop with ~16GB RAM in 4-bit\n- Use via Ollama (ollama run gemma4:12b-qat), LM Studio, or llama.cpp\n- Fine-tune with Unsloth (3x less memory, QAT-optimized)\n- Deploy on-device/mobile for agentic workflows\n\nLinks:\n- Blog: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/\n- HuggingFace: https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf\n- Unsloth docs: https://unsloth.ai/docs/models/gemma-4/qat\n",
     "tags": [
+      "explore",
       "research",
-      "explore"
+      "researched"
     ],
     "x": 631,
     "y": 97,
