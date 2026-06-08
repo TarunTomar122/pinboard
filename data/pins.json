@@ -30,36 +30,6 @@
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
-    "id": "edinburgh-1780884148",
-    "title": "Edinburgh MSc AI",
-    "description": "MSc AI at University of Edinburgh. Sep 2026.",
-    "url": "",
-    "tags": [
-      "education",
-      "career"
-    ],
-    "notes": "$72K loan. Focus: Bayesian ML.",
-    "x": 150,
-    "y": 500,
-    "createdAt": "2026-06-07T16:00:00Z"
-  },
-  {
-    "id": "v0-vercel-1749412800",
-    "title": "v0 by Vercel",
-    "description": "AI-powered full-stack app builder — generates React/Next.js apps from natural language with database integrations.",
-    "url": "https://v0.app",
-    "tags": [
-      "tools",
-      "ai",
-      "react",
-      "indie"
-    ],
-    "notes": "6M+ users and now supports Snowflake + AWS DB connections. This is basically a cheat code for rapid prototyping stocksbrew or lumi features — describe what you want, get working code.",
-    "x": 180,
-    "y": 620,
-    "createdAt": "2026-06-08T12:00:00Z"
-  },
-  {
     "id": "ntsc-rs-1780893164345",
     "title": "Ntsc-rs - Open-Source VHS/Analog TV Effects",
     "description": "Rust-based video emulator that adds authentic analog TV and VHS artifacts. Runs in-browser or as a library.",
