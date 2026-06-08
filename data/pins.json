@@ -15,51 +15,133 @@
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
-    "id": "affordancevla-1780883809",
-    "title": "AffordanceVLA: VLA Model with Affordance-Aware Understanding",
-    "description": "New VLA model that bridges VLM semantic spaces and embodied control policies using affordance-aware understanding for robotic manipulation.",
-    "url": "https://arxiv.org/abs/2606.06155",
+    "id": "nextjs-1780884148",
+    "title": "Next.js Documentation",
+    "description": "The React framework for production.",
+    "url": "https://nextjs.org/docs",
     "tags": [
-      "research",
-      "VLA",
-      "embodied-ai",
-      "robotics"
+      "framework",
+      "react",
+      "reference"
     ],
-    "notes": "Directly relevant to dissertation direction. Addresses the structural mismatch between VLM semantic spaces and control policies - core problem for VLA inference.",
-    "x": 150,
-    "y": 400,
-    "createdAt": "2026-06-08T08:00:00.000Z"
+    "notes": "",
+    "x": 100,
+    "y": 100,
+    "createdAt": "2026-06-07T10:00:00Z"
   },
   {
-    "id": "kitscenes-1780883809",
-    "title": "KITScenes: European Autonomous Driving Multimodal Dataset",
-    "description": "High-fidelity European AD dataset with synchronized LiDAR, cameras, and HD maps. Fills gaps in geographic diversity and sensor fidelity.",
-    "url": "https://arxiv.org/abs/2606.02956",
+    "id": "tailwind-1780884148",
+    "title": "Tailwind CSS",
+    "description": "Utility-first CSS framework.",
+    "url": "https://tailwindcss.com",
+    "tags": [
+      "css",
+      "design",
+      "reference"
+    ],
+    "notes": "",
+    "x": 400,
+    "y": 100,
+    "createdAt": "2026-06-07T10:00:00Z"
+  },
+  {
+    "id": "colab-1780884148",
+    "title": "Google Colab CLI",
+    "description": "Bridge local terminal to remote Colab GPUs.",
+    "url": "https://developers.googleblog.com/introducing-the-google-colab-cli/",
+    "tags": [
+      "tools",
+      "ai",
+      "gpu"
+    ],
+    "notes": "Fine-tune models with 5 commands from terminal.",
+    "x": 300,
+    "y": 250,
+    "createdAt": "2026-06-07T16:00:00Z"
+  },
+  {
+    "id": "wayve-1780884148",
+    "title": "Wayve",
+    "description": "Embodied AI for autonomous driving. Target company #1.",
+    "url": "https://wayve.ai",
     "tags": [
       "career",
-      "autonomous-driving",
-      "dataset",
+      "robotics",
       "explore"
     ],
-    "notes": "Wayve-relevant. European dataset with better sensor fidelity than nuScenes. Worth exploring for understanding current AD benchmarks.",
-    "x": 500,
-    "y": 250,
-    "createdAt": "2026-06-08T08:01:00.000Z"
+    "notes": "Goal after MSc.",
+    "x": 600,
+    "y": 100,
+    "createdAt": "2026-06-07T16:00:00Z"
   },
   {
-    "id": "adacodec-1780883809",
-    "title": "AdaCodec: Predictive Visual Code for Video MLLMs",
-    "description": "Compresses visual tokens in video MLLMs by exploiting temporal redundancy. Reduces repeated encoding of shared objects/backgrounds across frames.",
-    "url": "https://arxiv.org/abs/2606.02569",
+    "id": "edinburgh-1780884148",
+    "title": "Edinburgh MSc AI",
+    "description": "MSc AI at University of Edinburgh. Sep 2026.",
+    "url": "",
     "tags": [
-      "research",
-      "visual-compression",
-      "efficiency",
-      "explore"
+      "education",
+      "career"
     ],
-    "notes": "Visual context compression for video models. Adjacent to dissertation interest in compressing visual context for VLA inference.",
-    "x": 750,
+    "notes": "$72K loan. Focus: Bayesian ML.",
+    "x": 150,
     "y": 500,
-    "createdAt": "2026-06-08T08:02:00.000Z"
+    "createdAt": "2026-06-07T16:00:00Z"
+  },
+  {
+    "id": "ponti-1780884148",
+    "title": "Edoardo Ponti",
+    "description": "Target professor at Edinburgh. Efficient NLP, model compression.",
+    "url": "https://homepages.inf.ed.ac.uk/eponti/",
+    "tags": [
+      "professor",
+      "edinburgh"
+    ],
+    "notes": "Potential dissertation supervisor.",
+    "x": 750,
+    "y": 300,
+    "createdAt": "2026-06-07T16:00:00Z"
+  },
+  {
+    "id": "ghapi-1780884148",
+    "title": "GitHub API Docs",
+    "description": "REST API for GitHub.",
+    "url": "https://docs.github.com/rest",
+    "tags": [
+      "api",
+      "reference"
+    ],
+    "notes": "",
+    "x": 200,
+    "y": 400,
+    "createdAt": "2026-06-07T10:00:00Z"
+  },
+  {
+    "id": "ts-1780884148",
+    "title": "TypeScript Handbook",
+    "description": "Official TypeScript docs.",
+    "url": "https://www.typescriptlang.org/docs/handbook/",
+    "tags": [
+      "typescript",
+      "reference"
+    ],
+    "notes": "",
+    "x": 800,
+    "y": 400,
+    "createdAt": "2026-06-07T10:00:00Z"
+  },
+  {
+    "id": "pinboard-1780884148",
+    "title": "Pinboard App",
+    "description": "Our shared infinite canvas pinboard.",
+    "url": "https://pinboard-rho-tawny.vercel.app",
+    "tags": [
+      "project",
+      "build"
+    ],
+    "notes": "Built by Margo and Tarat.",
+    "x": 500,
+    "y": 350,
+    "createdAt": "2026-06-07T10:00:00Z"
   }
 ]
