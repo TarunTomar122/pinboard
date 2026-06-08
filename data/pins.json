@@ -174,5 +174,37 @@
     "x": 520,
     "y": 650,
     "createdAt": "2026-06-08T12:00:00Z"
+  },
+  {
+    "id": "ntsc-rs-1780893164345",
+    "title": "Ntsc-rs - Open-Source VHS/Analog TV Effects",
+    "description": "Rust-based video emulator that adds authentic analog TV and VHS artifacts. Runs in-browser or as a library.",
+    "url": "https://ntsc.rs/",
+    "tags": [
+      "tools",
+      "creative",
+      "youtube",
+      "fun"
+    ],
+    "notes": "402 points on HN today. Could be sick for YouTube thumbnails or intro effects - retro VHS vibes without After Effects. Open-source Rust too.",
+    "x": 383,
+    "y": 611,
+    "createdAt": "2026-06-08T14:00:00.000Z"
+  },
+  {
+    "id": "linear-perf-1780893164346",
+    "title": "How is Linear So Fast? Technical Breakdown",
+    "description": "Deep dive into performance engineering behind Linear - caching, optimistic updates, rendering strategies.",
+    "url": "https://performance.dev/how-is-linear-so-fast-a-technical-breakdown",
+    "tags": [
+      "react",
+      "performance",
+      "indie",
+      "reference"
+    ],
+    "notes": "346 pts on HN. Linear is the gold standard for fast web apps. Directly applicable to stocksbrew or yourtrace perf optimization.",
+    "x": 592,
+    "y": 577,
+    "createdAt": "2026-06-08T14:00:00.000Z"
   }
 ]
