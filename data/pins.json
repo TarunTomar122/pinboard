@@ -60,21 +60,6 @@
     "createdAt": "2026-06-08T12:00:00Z"
   },
   {
-    "id": "bolt-new-1749412800",
-    "title": "Bolt.new",
-    "description": "Browser-based AI dev environment by StackBlitz — build full-stack apps with direct code access.",
-    "url": "https://bolt.new",
-    "tags": [
-      "tools",
-      "ai",
-      "indie"
-    ],
-    "notes": "More dev-oriented than v0 — you get direct code access so you can actually understand and tweak what it generates. Great for weekend project ideas or rapid MVPs for roastmyresume-style apps.",
-    "x": 520,
-    "y": 650,
-    "createdAt": "2026-06-08T12:00:00Z"
-  },
-  {
     "id": "ntsc-rs-1780893164345",
     "title": "Ntsc-rs - Open-Source VHS/Analog TV Effects",
     "description": "Rust-based video emulator that adds authentic analog TV and VHS artifacts. Runs in-browser or as a library.",
@@ -88,22 +73,6 @@
     "notes": "402 points on HN today. Could be sick for YouTube thumbnails or intro effects - retro VHS vibes without After Effects. Open-source Rust too.",
     "x": 792,
     "y": 421,
-    "createdAt": "2026-06-08T14:00:00.000Z"
-  },
-  {
-    "id": "linear-perf-1780893164346",
-    "title": "How is Linear So Fast? Technical Breakdown",
-    "description": "Deep dive into performance engineering behind Linear - caching, optimistic updates, rendering strategies.",
-    "url": "https://performance.dev/how-is-linear-so-fast-a-technical-breakdown",
-    "tags": [
-      "react",
-      "performance",
-      "indie",
-      "reference"
-    ],
-    "notes": "346 pts on HN. Linear is the gold standard for fast web apps. Directly applicable to stocksbrew or yourtrace perf optimization.",
-    "x": 504,
-    "y": 270,
     "createdAt": "2026-06-08T14:00:00.000Z"
   }
 ]
