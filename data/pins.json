@@ -15,36 +15,6 @@
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
-    "id": "nextjs-1780884148",
-    "title": "Next.js Documentation",
-    "description": "The React framework for production.",
-    "url": "https://nextjs.org/docs",
-    "tags": [
-      "framework",
-      "react",
-      "reference"
-    ],
-    "notes": "",
-    "x": 100,
-    "y": 100,
-    "createdAt": "2026-06-07T10:00:00Z"
-  },
-  {
-    "id": "tailwind-1780884148",
-    "title": "Tailwind CSS",
-    "description": "Utility-first CSS framework.",
-    "url": "https://tailwindcss.com",
-    "tags": [
-      "css",
-      "design",
-      "reference"
-    ],
-    "notes": "",
-    "x": 400,
-    "y": 100,
-    "createdAt": "2026-06-07T10:00:00Z"
-  },
-  {
     "id": "colab-1780884148",
     "title": "Google Colab CLI",
     "description": "Bridge local terminal to remote Colab GPUs.",
@@ -55,23 +25,8 @@
       "gpu"
     ],
     "notes": "Fine-tune models with 5 commands from terminal.",
-    "x": 300,
-    "y": 250,
-    "createdAt": "2026-06-07T16:00:00Z"
-  },
-  {
-    "id": "wayve-1780884148",
-    "title": "Wayve",
-    "description": "Embodied AI for autonomous driving. Target company #1.",
-    "url": "https://wayve.ai",
-    "tags": [
-      "career",
-      "robotics",
-      "explore"
-    ],
-    "notes": "Goal after MSc.",
-    "x": 600,
-    "y": 100,
+    "x": 464,
+    "y": 123,
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
