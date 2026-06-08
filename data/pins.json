@@ -76,5 +76,18 @@
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
+  },
+  {
+    "id": "pin-1780930711636",
+    "title": "gemma stuff",
+    "url": "https://x.com/_philschmid/status/2063990553826439378",
+    "description": "",
+    "notes": "",
+    "tags": [
+      "research"
+    ],
+    "x": 760,
+    "y": 440,
+    "createdAt": "2026-06-08T14:58:31.636Z"
   }
 ]
