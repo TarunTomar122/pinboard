@@ -5,11 +5,12 @@
     "description": "Dissertation direction: compressing visual context for VLA inference efficiency.",
     "url": "",
     "tags": [
-      "research",
       "dissertation",
-      "explore"
+      "explore",
+      "research",
+      "researched"
     ],
-    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) \u2014 Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs \u2014 covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
     "x": 141,
     "y": 214,
     "createdAt": "2026-06-07T16:00:00.000Z"
@@ -47,7 +48,7 @@
   },
   {
     "id": "insforge-1749350000",
-    "title": "InsForge — Open-Source Backend for AI Coding Agents",
+    "title": "InsForge \u2014 Open-Source Backend for AI Coding Agents",
     "description": "All-in-one backend platform that gives AI agents database, auth, storage, compute, hosting, and an AI gateway through a semantic layer.",
     "url": "https://github.com/InsForge/insforge",
     "tags": [
@@ -56,15 +57,15 @@
       "ai",
       "open-source"
     ],
-    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart — could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
+    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart \u2014 could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
     "x": 480,
     "y": 190,
     "createdAt": "2026-06-08T18:00:00Z"
   },
   {
     "id": "wave-1749350100",
-    "title": "Wave — Voice-to-Text Anywhere on macOS",
-    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "title": "Wave \u2014 Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release \u2014 speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
     "url": "https://www.producthunt.com/products/wave-16",
     "tags": [
       "tools",
@@ -72,7 +73,7 @@
       "ai",
       "youtube"
     ],
-    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "notes": "This could be a game-changer for YouTube scripting \u2014 talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
