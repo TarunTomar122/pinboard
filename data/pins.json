@@ -5,12 +5,11 @@
     "description": "Dissertation direction: compressing visual context for VLA inference efficiency.",
     "url": "",
     "tags": [
-      "dissertation",
-      "explore",
       "research",
-      "researched"
+      "dissertation",
+      "explore"
     ],
-    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n\n--- RESEARCH (Jun 8 2026) ---\nKey area: reducing visual tokens in VLA models via pruning, merging, or adaptive tokenization.\n\nPapers:\n- LLaVolta (NeurIPS 2024): Visual Context Compressor via avg-pooling. arxiv.org/abs/2406.20092\n- EfficientVLA (Jun 2025): Training-free VLA acceleration via structured pruning. arxiv.org/abs/2506.10100\n- VLA-Pruner (Nov 2025): Temporal-aware dual-level pruning. arxiv.org/abs/2511.16449\n\nEdoardo Ponti connection: His AToM project (ERC-funded) focuses on adaptive tokenization for foundation models \u2014 same principles apply to VLA visual tokens. Project: https://ducdauge.github.io/atom/\n\nTools/repos:\n- OpenVLA (github.com/openvla/openvla) \u2014 supports LoRA fine-tuning, visual compression can be applied at encoder output\n- HuggingFace PEFT for LoRA/QLoRA with OpenVLA\n- Combining visual context compressor + LoRA adapters is a viable research direction\n",
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
     "x": 141,
     "y": 214,
     "createdAt": "2026-06-07T16:00:00.000Z"
@@ -48,7 +47,7 @@
   },
   {
     "id": "insforge-1749350000",
-    "title": "InsForge \u2014 Open-Source Backend for AI Coding Agents",
+    "title": "InsForge — Open-Source Backend for AI Coding Agents",
     "description": "All-in-one backend platform that gives AI agents database, auth, storage, compute, hosting, and an AI gateway through a semantic layer.",
     "url": "https://github.com/InsForge/insforge",
     "tags": [
@@ -57,15 +56,15 @@
       "ai",
       "open-source"
     ],
-    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart \u2014 could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
+    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart — could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
     "x": 480,
     "y": 190,
     "createdAt": "2026-06-08T18:00:00Z"
   },
   {
     "id": "wave-1749350100",
-    "title": "Wave \u2014 Voice-to-Text Anywhere on macOS",
-    "description": "Hold a hotkey, speak, release \u2014 speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "title": "Wave — Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
     "url": "https://www.producthunt.com/products/wave-16",
     "tags": [
       "tools",
@@ -73,7 +72,7 @@
       "ai",
       "youtube"
     ],
-    "notes": "This could be a game-changer for YouTube scripting \u2014 talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
@@ -83,11 +82,10 @@
     "title": "gemma stuff",
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
     "description": "",
-    "notes": "i wanna know what this is about and what can i do with it?\n\n\n--- RESEARCH (Jun 8 2026) ---\nGemma 4 QAT (released ~Jun 5, 2026): Google released official quantization-aware training checkpoints for all 5 Gemma 4 sizes (E2B, E4B, 12B, 26B-A4B MoE, 31B).\n\nKey: 4-bit QAT models use ~72% less memory with near-original performance. Far better than post-training quantization.\n\nWhat you can do:\n- Run 12B on a laptop with ~16GB RAM in 4-bit\n- Use via Ollama (ollama run gemma4:12b-qat), LM Studio, or llama.cpp\n- Fine-tune with Unsloth (3x less memory, QAT-optimized)\n- Deploy on-device/mobile for agentic workflows\n\nLinks:\n- Blog: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/\n- HuggingFace: https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf\n- Unsloth docs: https://unsloth.ai/docs/models/gemma-4/qat\n",
+    "notes": "i wanna know what this is about and what can i do with it?",
     "tags": [
-      "explore",
       "research",
-      "researched"
+      "explore"
     ],
     "x": 631,
     "y": 97,
