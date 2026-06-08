@@ -5,11 +5,12 @@
     "description": "Dissertation direction: compressing visual context for VLA inference efficiency.",
     "url": "",
     "tags": [
-      "research",
       "dissertation",
-      "explore"
+      "explore",
+      "research",
+      "researched"
     ],
-    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.",
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n\n--- RESEARCH (Jun 8 2026) ---\nKey area: reducing visual tokens in VLA models via pruning, merging, or adaptive tokenization.\n\nPapers:\n- LLaVolta (NeurIPS 2024): Visual Context Compressor via avg-pooling. arxiv.org/abs/2406.20092\n- EfficientVLA (Jun 2025): Training-free VLA acceleration via structured pruning. arxiv.org/abs/2506.10100\n- VLA-Pruner (Nov 2025): Temporal-aware dual-level pruning. arxiv.org/abs/2511.16449\n\nEdoardo Ponti connection: His AToM project (ERC-funded) focuses on adaptive tokenization for foundation models \u2014 same principles apply to VLA visual tokens. Project: https://ducdauge.github.io/atom/\n\nTools/repos:\n- OpenVLA (github.com/openvla/openvla) \u2014 supports LoRA fine-tuning, visual compression can be applied at encoder output\n- HuggingFace PEFT for LoRA/QLoRA with OpenVLA\n- Combining visual context compressor + LoRA adapters is a viable research direction\n",
     "x": 141,
     "y": 214,
     "createdAt": "2026-06-07T16:00:00.000Z"
@@ -47,7 +48,7 @@
   },
   {
     "id": "insforge-1749350000",
-    "title": "InsForge — Open-Source Backend for AI Coding Agents",
+    "title": "InsForge \u2014 Open-Source Backend for AI Coding Agents",
     "description": "All-in-one backend platform that gives AI agents database, auth, storage, compute, hosting, and an AI gateway through a semantic layer.",
     "url": "https://github.com/InsForge/insforge",
     "tags": [
@@ -56,15 +57,15 @@
       "ai",
       "open-source"
     ],
-    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart — could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
+    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart \u2014 could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
     "x": 480,
     "y": 190,
     "createdAt": "2026-06-08T18:00:00Z"
   },
   {
     "id": "wave-1749350100",
-    "title": "Wave — Voice-to-Text Anywhere on macOS",
-    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "title": "Wave \u2014 Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release \u2014 speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
     "url": "https://www.producthunt.com/products/wave-16",
     "tags": [
       "tools",
@@ -72,7 +73,7 @@
       "ai",
       "youtube"
     ],
-    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "notes": "This could be a game-changer for YouTube scripting \u2014 talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
