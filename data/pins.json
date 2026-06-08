@@ -143,5 +143,36 @@
     "x": 500,
     "y": 350,
     "createdAt": "2026-06-07T10:00:00Z"
+  },
+  {
+    "id": "v0-vercel-1749412800",
+    "title": "v0 by Vercel",
+    "description": "AI-powered full-stack app builder — generates React/Next.js apps from natural language with database integrations.",
+    "url": "https://v0.app",
+    "tags": [
+      "tools",
+      "ai",
+      "react",
+      "indie"
+    ],
+    "notes": "6M+ users and now supports Snowflake + AWS DB connections. This is basically a cheat code for rapid prototyping stocksbrew or lumi features — describe what you want, get working code.",
+    "x": 180,
+    "y": 620,
+    "createdAt": "2026-06-08T12:00:00Z"
+  },
+  {
+    "id": "bolt-new-1749412800",
+    "title": "Bolt.new",
+    "description": "Browser-based AI dev environment by StackBlitz — build full-stack apps with direct code access.",
+    "url": "https://bolt.new",
+    "tags": [
+      "tools",
+      "ai",
+      "indie"
+    ],
+    "notes": "More dev-oriented than v0 — you get direct code access so you can actually understand and tweak what it generates. Great for weekend project ideas or rapid MVPs for roastmyresume-style apps.",
+    "x": 520,
+    "y": 650,
+    "createdAt": "2026-06-08T12:00:00Z"
   }
 ]
