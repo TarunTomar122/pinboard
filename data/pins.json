@@ -44,48 +44,6 @@
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
-    "id": "ponti-1780884148",
-    "title": "Edoardo Ponti",
-    "description": "Target professor at Edinburgh. Efficient NLP, model compression.",
-    "url": "https://homepages.inf.ed.ac.uk/eponti/",
-    "tags": [
-      "professor",
-      "edinburgh"
-    ],
-    "notes": "Potential dissertation supervisor.",
-    "x": 750,
-    "y": 300,
-    "createdAt": "2026-06-07T16:00:00Z"
-  },
-  {
-    "id": "ts-1780884148",
-    "title": "TypeScript Handbook",
-    "description": "Official TypeScript docs.",
-    "url": "https://www.typescriptlang.org/docs/handbook/",
-    "tags": [
-      "typescript",
-      "reference"
-    ],
-    "notes": "",
-    "x": 800,
-    "y": 400,
-    "createdAt": "2026-06-07T10:00:00Z"
-  },
-  {
-    "id": "pinboard-1780884148",
-    "title": "Pinboard App",
-    "description": "Our shared infinite canvas pinboard.",
-    "url": "https://pinboard-rho-tawny.vercel.app",
-    "tags": [
-      "project",
-      "build"
-    ],
-    "notes": "Built by Margo and Tarat.",
-    "x": 500,
-    "y": 350,
-    "createdAt": "2026-06-07T10:00:00Z"
-  },
-  {
     "id": "v0-vercel-1749412800",
     "title": "v0 by Vercel",
     "description": "AI-powered full-stack app builder — generates React/Next.js apps from natural language with database integrations.",
@@ -144,8 +102,8 @@
       "reference"
     ],
     "notes": "346 pts on HN. Linear is the gold standard for fast web apps. Directly applicable to stocksbrew or yourtrace perf optimization.",
-    "x": 592,
-    "y": 577,
+    "x": 504,
+    "y": 270,
     "createdAt": "2026-06-08T14:00:00.000Z"
   }
 ]
