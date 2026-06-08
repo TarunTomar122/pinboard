@@ -43,6 +43,38 @@
     "notes": "402 points on HN today. Could be sick for YouTube thumbnails or intro effects - retro VHS vibes without After Effects. Open-source Rust too.",
     "x": 298,
     "y": 276,
-    "createdAt": "2026-06-08T14:00:00.000Z"
+    "createdAt": "2026-06-08T14:00:00Z"
+  },
+  {
+    "id": "insforge-1749350000",
+    "title": "InsForge — Open-Source Backend for AI Coding Agents",
+    "description": "All-in-one backend platform that gives AI agents database, auth, storage, compute, hosting, and an AI gateway through a semantic layer.",
+    "url": "https://github.com/InsForge/insforge",
+    "tags": [
+      "tools",
+      "indie",
+      "ai",
+      "open-source"
+    ],
+    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart — could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
+    "x": 480,
+    "y": 190,
+    "createdAt": "2026-06-08T18:00:00Z"
+  },
+  {
+    "id": "wave-1749350100",
+    "title": "Wave — Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "url": "https://www.producthunt.com/products/wave-16",
+    "tags": [
+      "tools",
+      "productivity",
+      "ai",
+      "youtube"
+    ],
+    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "x": 650,
+    "y": 350,
+    "createdAt": "2026-06-08T18:00:00Z"
   }
 ]
