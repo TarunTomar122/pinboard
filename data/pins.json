@@ -10,7 +10,7 @@
       "research",
       "researched"
     ],
-    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) \u2014 Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs \u2014 covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) — Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs — covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
     "x": 141,
     "y": 214,
     "createdAt": "2026-06-07T16:00:00.000Z"
@@ -26,7 +26,7 @@
       "researched",
       "tools"
     ],
-    "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments \u2014 no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
+    "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments — no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
     "x": 356,
     "y": 66,
     "createdAt": "2026-06-07T16:00:00Z"
@@ -49,7 +49,7 @@
   },
   {
     "id": "insforge-1749350000",
-    "title": "InsForge \u2014 Open-Source Backend for AI Coding Agents",
+    "title": "InsForge — Open-Source Backend for AI Coding Agents",
     "description": "All-in-one backend platform that gives AI agents database, auth, storage, compute, hosting, and an AI gateway through a semantic layer.",
     "url": "https://github.com/InsForge/insforge",
     "tags": [
@@ -58,15 +58,15 @@
       "ai",
       "open-source"
     ],
-    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart \u2014 could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
+    "notes": "Trending #1 on GitHub TypeScript. The idea of a semantic layer between AI agents and infra is smart — could speed up building Lumi or yourtrace if you ever want AI-assisted deploys. Worth a weekend explore.",
     "x": 480,
     "y": 190,
     "createdAt": "2026-06-08T18:00:00Z"
   },
   {
     "id": "wave-1749350100",
-    "title": "Wave \u2014 Voice-to-Text Anywhere on macOS",
-    "description": "Hold a hotkey, speak, release \u2014 speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "title": "Wave — Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
     "url": "https://www.producthunt.com/products/wave-16",
     "tags": [
       "tools",
@@ -74,7 +74,7 @@
       "ai",
       "youtube"
     ],
-    "notes": "This could be a game-changer for YouTube scripting \u2014 talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
@@ -84,7 +84,7 @@
     "title": "gemma stuff",
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
     "description": "",
-    "notes": "i wanna know what this is about and what can i do with it?\n\n## Research Findings (auto-researched Jun 8)\n\n**Gemma 4** (released April 2026) \u2014 Google's most capable open model family.\n- 4 sizes: E2B, E4B, 26B MoE, 31B Dense\n- Multimodal: image inputs on all variants\n- Apache 2.0 license\n\n**Fine-tuning:**\n- Unsloth guide: https://unsloth.ai/docs/models/gemma-4/train (E2B LoRA needs 8-10GB VRAM)\n- HF QLoRA: https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora\n- Official: https://ai.google.dev/gemma/docs/tune\n\n**Deployment:** Ollama (easy), vLLM (production), llama.cpp (CPU/GPU)\n- HF hub: https://huggingface.co/google/gemma-4-12B",
+    "notes": "i wanna know what this is about and what can i do with it?\n\n## Research Findings (auto-researched Jun 8)\n\n**Gemma 4** (released April 2026) — Google's most capable open model family.\n- 4 sizes: E2B, E4B, 26B MoE, 31B Dense\n- Multimodal: image inputs on all variants\n- Apache 2.0 license\n\n**Fine-tuning:**\n- Unsloth guide: https://unsloth.ai/docs/models/gemma-4/train (E2B LoRA needs 8-10GB VRAM)\n- HF QLoRA: https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora\n- Official: https://ai.google.dev/gemma/docs/tune\n\n**Deployment:** Ollama (easy), vLLM (production), llama.cpp (CPU/GPU)\n- HF hub: https://huggingface.co/google/gemma-4-12B",
     "tags": [
       "explore",
       "research",
@@ -93,27 +93,5 @@
     "x": 631,
     "y": 97,
     "createdAt": "2026-06-08T14:58:31.636Z"
-  },
-  {
-    "id": "pin-1780931505319",
-    "title": "talk to that ai dude on x",
-    "url": "",
-    "description": "",
-    "notes": "",
-    "tags": [],
-    "x": 1182,
-    "y": 82,
-    "createdAt": "2026-06-08T15:11:45.319Z"
-  },
-  {
-    "id": "pin-1780932225723",
-    "title": "update digital garden",
-    "url": "",
-    "description": "",
-    "notes": "",
-    "tags": [],
-    "x": 1195,
-    "y": 193,
-    "createdAt": "2026-06-08T15:23:45.723Z"
   }
 ]
