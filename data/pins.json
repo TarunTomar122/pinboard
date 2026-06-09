@@ -11,8 +11,8 @@
       "researched"
     ],
     "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) — Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs — covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
-    "x": 141,
-    "y": 214,
+    "x": 132,
+    "y": 122,
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
