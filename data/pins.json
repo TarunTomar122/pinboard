@@ -27,8 +27,8 @@
       "tools"
     ],
     "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments — no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
-    "x": 356,
-    "y": 66,
+    "x": 1018,
+    "y": 109,
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
@@ -59,8 +59,8 @@
       "youtube"
     ],
     "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
-    "x": 507,
-    "y": 200,
+    "x": 624,
+    "y": 356,
     "createdAt": "2026-06-08T18:00:00Z"
   }
 ]
