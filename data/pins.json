@@ -78,20 +78,5 @@
     "x": 650,
     "y": 350,
     "createdAt": "2026-06-08T18:00:00Z"
-  },
-  {
-    "id": "pin-1780930711636",
-    "title": "gemma stuff",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
-    "description": "",
-    "notes": "i wanna know what this is about and what can i do with it?\n\n## Research Findings (auto-researched Jun 8)\n\n**Gemma 4** (released April 2026) — Google's most capable open model family.\n- 4 sizes: E2B, E4B, 26B MoE, 31B Dense\n- Multimodal: image inputs on all variants\n- Apache 2.0 license\n\n**Fine-tuning:**\n- Unsloth guide: https://unsloth.ai/docs/models/gemma-4/train (E2B LoRA needs 8-10GB VRAM)\n- HF QLoRA: https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora\n- Official: https://ai.google.dev/gemma/docs/tune\n\n**Deployment:** Ollama (easy), vLLM (production), llama.cpp (CPU/GPU)\n- HF hub: https://huggingface.co/google/gemma-4-12B",
-    "tags": [
-      "explore",
-      "research",
-      "researched"
-    ],
-    "x": 631,
-    "y": 97,
-    "createdAt": "2026-06-08T14:58:31.636Z"
   }
 ]
