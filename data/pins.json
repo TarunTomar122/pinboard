@@ -10,7 +10,7 @@
       "research",
       "researched"
     ],
-    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) — Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs — covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
+    "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) \u2014 Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs \u2014 covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
     "x": 580,
     "y": 260,
     "createdAt": "2026-06-07T16:00:00.000Z"
@@ -26,7 +26,7 @@
       "researched",
       "tools"
     ],
-    "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments — no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
+    "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments \u2014 no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
     "x": 820,
     "y": 500,
     "createdAt": "2026-06-07T16:00:00Z"
@@ -49,8 +49,8 @@
   },
   {
     "id": "wave-1749350100",
-    "title": "Wave — Voice-to-Text Anywhere on macOS",
-    "description": "Hold a hotkey, speak, release — speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
+    "title": "Wave \u2014 Voice-to-Text Anywhere on macOS",
+    "description": "Hold a hotkey, speak, release \u2014 speech gets transcribed and processed by AI, local or cloud. #2 on Product Hunt today.",
     "url": "https://www.producthunt.com/products/wave-16",
     "tags": [
       "tools",
@@ -58,7 +58,7 @@
       "ai",
       "youtube"
     ],
-    "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
+    "notes": "This could be a game-changer for YouTube scripting \u2014 talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
     "x": 780,
     "y": 220,
     "createdAt": "2026-06-08T18:00:00Z"
@@ -73,5 +73,25 @@
     "x": 960,
     "y": 320,
     "createdAt": "2026-06-09T13:09:09.970Z"
+  },
+  {
+    "id": "pin-1781168261904",
+    "title": {
+      "title": "huggingface/ml-intern",
+      "description": "Autonomous ML coding agent by HF. CLI that researches docs/papers/datasets, writes training code, runs GPU sandboxes + HF Jobs. Good for MSc AI prep - fine-tuning, paper reproduction, dataset exploration. Needs HF_TOKEN + GITHUB_TOKEN. Supports local models via ollama/vllm.",
+      "link": "https://github.com/huggingface/ml-intern",
+      "tags": [
+        "research",
+        "ml",
+        "tools"
+      ]
+    },
+    "description": "",
+    "url": "",
+    "notes": "",
+    "tags": [],
+    "x": 1260,
+    "y": 100,
+    "createdAt": "2026-06-11T08:57:41Z"
   }
 ]
