@@ -76,20 +76,16 @@
   },
   {
     "id": "pin-1781168261904",
-    "title": {
-      "title": "huggingface/ml-intern",
-      "description": "Autonomous ML coding agent by HF. CLI that researches docs/papers/datasets, writes training code, runs GPU sandboxes + HF Jobs. Good for MSc AI prep - fine-tuning, paper reproduction, dataset exploration. Needs HF_TOKEN + GITHUB_TOKEN. Supports local models via ollama/vllm.",
-      "link": "https://github.com/huggingface/ml-intern",
-      "tags": [
-        "research",
-        "ml",
-        "tools"
-      ]
-    },
-    "description": "",
-    "url": "",
-    "notes": "",
-    "tags": [],
+    "title": "huggingface/ml-intern",
+    "description": "Autonomous ML coding agent by HF. CLI that researches docs/papers/datasets, writes training code, runs GPU sandboxes + HF Jobs. Good for MSc AI prep \u2014 fine-tuning, paper reproduction, dataset exploration.",
+    "url": "https://github.com/huggingface/ml-intern",
+    "notes": "Needs HF_TOKEN + GITHUB_TOKEN. Supports local models via ollama/vllm/lm_studio/llamacpp.\n\n## Research Findings (auto-researched Jun 11)\n\n**What it is:** HF CLI agent that autonomously researches, writes, and ships ML code using the HF ecosystem. Deep access to docs, papers, datasets, and cloud compute.\n\n**Install:** git clone + uv sync + uv tool install -e .\n\n**Key features:**\n- Interactive + headless (single-prompt) modes\n- Sandbox tools: run code in HF Space GPU sandboxes (--sandbox-tools)\n- Local model support: ollama, vllm, lm_studio, llamacpp prefixes\n- Auto-uploads session traces to private HF dataset (Claude Code JSONL format)\n- Slack notifications for approval/error/turn_complete events\n- All hosted inference billed to active HF user\n\n**Usage:**\n```\nml-intern \"fine-tune llama on my dataset\"   # headless\nml-intern --model ollama/llama3.1:8b \"prompt\"  # local model\nml-intern --sandbox-tools \"test training script\"  # GPU sandbox\n```\n\n**Synergy:** Perfect for MSc AI dissertation work \u2014 automates paper reproduction, dataset exploration, fine-tuning experiments. Pairs well with Colab CLI pin for GPU access.",
+    "tags": [
+      "research",
+      "ml",
+      "tools",
+      "researched"
+    ],
     "x": 1260,
     "y": 100,
     "createdAt": "2026-06-11T08:57:41Z"
