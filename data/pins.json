@@ -11,8 +11,8 @@
       "researched"
     ],
     "notes": "Edoardo Ponti's area. Could combine with LoRA/PEFT experience.\n\n## Research Findings (auto-researched Jun 8)\n\n**Key paper: LLaVolta** (NeurIPS 2024) — Progressive visual context compression for MLLMs. Achieves speedups without sacrificing benchmarks.\n- arXiv: https://arxiv.org/abs/2406.20092\n- GitHub: https://github.com/yaolinli/MLLM-Token-Compression\n\n**Survey**: Comprehensive survey on token/visual compression in MLLMs — covers pruning, merging, resampling, learned compression.\n\n**Significance**: Core problem is MLLMs encode images into hundreds of visual tokens, making long-context reasoning expensive. This attacks that bottleneck directly. Fast-moving area (2024-2025).",
-    "x": 800,
-    "y": 560,
+    "x": 580,
+    "y": 260,
     "createdAt": "2026-06-07T16:00:00.000Z"
   },
   {
@@ -27,8 +27,8 @@
       "tools"
     ],
     "notes": "Fine-tune models with 5 commands from terminal.\n\n\n\n## Research Findings (auto-researched Jun 9)\n\n**What it is:** CLI tool that bridges your local terminal to Colab GPU/TPU runtimes. No more browser notebooks for quick GPU work.\n\n**Install:** pip install google-colab-cli (or uv)\n\n**Key features:**\n- GPU selection: --gpu T4|L4|A100|H100\n- Provision CPU/GPU/TPU runtimes from terminal\n- Execute local code remotely, manage remote files\n- Feels like SSH-ing into a GPU machine\n\n**Resources:**\n- GitHub: https://github.com/googlecolab/google-colab-cli\n- Blog post: https://developers.googleblog.com/introducing-the-google-colab-cli/\n- Tutorial: https://medium.com/google-cloud/google-colab-but-in-your-favourite-terminal-894bff557359\n\n**Synergy:** Perfect companion for Gemma fine-tuning and dissertation experiments — no notebook overhead, just run scripts directly on Colab GPUs from terminal.",
-    "x": 1020,
-    "y": 560,
+    "x": 766,
+    "y": 511,
     "createdAt": "2026-06-07T16:00:00Z"
   },
   {
@@ -43,8 +43,8 @@
       "fun"
     ],
     "notes": "402 points on HN today. Could be sick for YouTube thumbnails or intro effects - retro VHS vibes without After Effects. Open-source Rust too.",
-    "x": 800,
-    "y": 340,
+    "x": 502,
+    "y": 407,
     "createdAt": "2026-06-08T14:00:00Z"
   },
   {
@@ -59,19 +59,24 @@
       "youtube"
     ],
     "notes": "This could be a game-changer for YouTube scripting — talk through your video outline and get text instantly. Also useful for writing commit messages or app copy without touching the keyboard. Free local mode is a nice touch.",
-    "x": 1000,
-    "y": 260,
+    "x": 780,
+    "y": 220,
     "createdAt": "2026-06-08T18:00:00Z"
   },
   {
-    "id": "pin-1781010549970",
-    "title": "search by choice and compare",
-    "url": "",
-    "description": "",
-    "notes": "",
-    "tags": [],
-    "x": 1180,
-    "y": 400,
-    "createdAt": "2026-06-09T13:09:09.970Z"
+    "id": "pin-1781168261904",
+    "title": "huggingface/ml-intern",
+    "description": "Autonomous ML coding agent by HF. CLI that researches docs/papers/datasets, writes training code, runs GPU sandboxes + HF Jobs. Good for MSc AI prep — fine-tuning, paper reproduction, dataset exploration.",
+    "url": "https://github.com/huggingface/ml-intern",
+    "notes": "Needs HF_TOKEN + GITHUB_TOKEN. Supports local models via ollama/vllm/lm_studio/llamacpp.\n\n## Research Findings (auto-researched Jun 11)\n\n**What it is:** HF CLI agent that autonomously researches, writes, and ships ML code using the HF ecosystem. Deep access to docs, papers, datasets, and cloud compute.\n\n**Install:** git clone + uv sync + uv tool install -e .\n\n**Key features:**\n- Interactive + headless (single-prompt) modes\n- Sandbox tools: run code in HF Space GPU sandboxes (--sandbox-tools)\n- Local model support: ollama, vllm, lm_studio, llamacpp prefixes\n- Auto-uploads session traces to private HF dataset (Claude Code JSONL format)\n- Slack notifications for approval/error/turn_complete events\n- All hosted inference billed to active HF user\n\n**Usage:**\n```\nml-intern \"fine-tune llama on my dataset\"   # headless\nml-intern --model ollama/llama3.1:8b \"prompt\"  # local model\nml-intern --sandbox-tools \"test training script\"  # GPU sandbox\n```\n\n**Synergy:** Perfect for MSc AI dissertation work — automates paper reproduction, dataset exploration, fine-tuning experiments. Pairs well with Colab CLI pin for GPU access.",
+    "tags": [
+      "research",
+      "ml",
+      "tools",
+      "researched"
+    ],
+    "x": 1035,
+    "y": 110,
+    "createdAt": "2026-06-11T08:57:41Z"
   }
 ]
